@@ -1,0 +1,42 @@
+#restart {
+    display: none;
+}
+
+#lives {
+    text-align: center;
+    font-size: 1.5em;
+}
+
+#alphabet {
+    list-style-type: none;
+    
+}
+
+#alphabet li {
+    display: inline;
+    border: 2px solid black;
+    margin: 0.5em;
+    padding: 0.5%;
+    font-size: 1em;
+    text-align: center;
+}
+
+#myWord {
+    list-style-type: none;
+    text-align: center;
+}
+
+#myWord li {
+    display: inline;
+    margin: 0.2em;
+    font-size: 3em;
+}
+
+#definition {
+    font-size: 1.5em;
+    text-align: center;
+}
+
+.active {
+    opacity: 0.4;
+}
