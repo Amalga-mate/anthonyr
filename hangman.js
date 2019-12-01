@@ -1,28 +1,54 @@
+// Letters for the game to create buttons & change lines
 let alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "N", "M", "O", "P",
 "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z" ]
+
+// Word dictionary to get words & dictionarys from
 let word_dict = {"Comittee": "a group of people appointed for a specific function, typically consisting of members of a larger group.",
                  "Tattoo": "a form of body modification where a design is made by inserting ink",
                  "Electricity" : "the set of physical phenomena associated with the presence and motion of electric charge.",
-                 "Amendment": "a minor change or addition designed to improve a text, piece of legislation, etc."
-                
-                
+                 "Amendment": "a minor change or addition designed to improve a text, piece of legislation, etc.",
+                 "Computer": "an electronic device for storing and processing data, typically in binary form, according to instructions given to it in a variable program.",
+                 "Programming": "The process of developing and implementing various sets of instructions to enable a computer to do a certain task.",
+                 "Variable": "an element, feature, or factor that is liable to vary or change.",
+                 "sarcasm": "the use of irony to mock or convey contempt.",
+                 "Philippines": "an archipelago consisting of the 3 island groups Luzon, Visayas, and Mindanao",
+                 "Javascript": "an object-oriented computer programming language commonly used to create interactive effects within web browsers."
                 }
+
+// Global Counters and word to guess
 let guesses = []
 let counter = 0
 let space = 0
 let lives = 7
 
+
+// 1: Display or not display each object
+// 2: Get word and definition
+// 3: Update Game
+// 4: Create Buttons 
+// 5: Create Lines
 function startGame (){
     document.getElementById("start").style.display = "none"
+    document.getElementById("title").style.display = "none"
+    document.getElementById("winner").style.display = "none"
+    document.getElementById("loser").style.display = "none"
+    document.getElementById("again").style.display = "none"
+
     document.getElementById("restart").style.display = "initial"
+    document.getElementById("lives").style.display = "block"
+    document.getElementById("definition").style.display = "block"
+
     let keys = Object.keys(word_dict)
     let word = keys[Math.floor(Math.random() * keys.length)]
     let definition = word_dict[word]
-    document.getElementById("lives").innerHTML = "You have " + lives + " lives";
+    
+    update()
     generateButtons(word)
     getWord(word, definition)
 }
 
+
+// Create buttons, attach onClick function to them
 function generateButtons (word) {
     myButtons = document.getElementById('buttons');
     letters = document.createElement('ul');
@@ -40,7 +66,7 @@ function generateButtons (word) {
 }
 
 
-// Create geusses ul
+// Create lines for guessing
 function getWord (word, definition) {
     wordHolder = document.getElementById('hidden');
     correct = document.createElement('ul');
@@ -65,8 +91,10 @@ function getWord (word, definition) {
 }
 
 
-// OnClick Function
-check = function (word) {
+// Onclick, check if letter in word.
+// If Yes, use update function
+// If No, lose a life, then use update function
+function check(word) {
     list.onclick = function () {
         let geuss = (this.innerHTML);
         let j = 0
@@ -89,20 +117,60 @@ check = function (word) {
     }
 }
 
-// Show lives
+
+// Update Lives & Check if player won or lost
 function update() {
     document.getElementById("lives").innerHTML = "You have " + lives + " lives";
     if (lives < 1) {
-        document.getElementById("lives").innerHTML = "Game Over";
-      //Change to game over screen
+        loser();
     }
     for (var i = 0; i < guesses.length; i++) {
       if (counter + space === guesses.length) {
-        document.getElementById("lives").innerHTML = "You Win!";
+        winner()
       }
     }
   }
 
+
+// Display Win Screen & Play Again button
+function winner(){
+    correct.parentNode.removeChild(correct);
+    letters.parentNode.removeChild(letters);
+    
+    document.getElementById("lives").style.display = "none"
+    document.getElementById("definition").style.display = "none"
+    document.getElementById("restart").style.display = "none"
+
+    document.getElementById("winner").style.display = "initial"
+    document.getElementById("again").style.display = "initial"
+}
+
+
+// Display Lose screen & play again button
+function loser(){
+    correct.parentNode.removeChild(correct);
+    letters.parentNode.removeChild(letters);
+    
+    document.getElementById("lives").style.display = "none"
+    document.getElementById("definition").style.display = "none"
+    document.getElementById("restart").style.display = "none"
+
+    document.getElementById("loser").style.display = "initial"
+    document.getElementById("again").style.display = "initial"
+}
+
+
+// Essentially modified restart button
+function playAgain() {
+    guesses = []
+    counter = 0
+    space = 0
+    lives = 7
+    startGame()
+}
+
+
+// Restart Game while ingame
 function restartGame() {
     correct.parentNode.removeChild(correct);
     letters.parentNode.removeChild(letters);
@@ -113,5 +181,8 @@ function restartGame() {
     startGame()
 }
 
+
+// onClick functions for game states (start, restart, play again)
 document.getElementById("start").onclick = startGame
 document.getElementById("restart").onclick = restartGame
+document.getElementById("again").onclick = playAgain
