@@ -1,5 +1,6 @@
 #restart {
     display: none;
+    padding: 1%;
 }
 
 #lives {
@@ -21,6 +22,10 @@
     text-align: center;
 }
 
+#alphabet li:hover{
+    background-color: yellow;
+}
+
 #myWord {
     list-style-type: none;
     text-align: center;
@@ -39,4 +44,35 @@
 
 .active {
     opacity: 0.4;
+}
+
+#start {
+    text-align: center;
+    padding: 1%;
+}
+
+#title {
+    width: 50%;
+    height: 50%;
+}
+
+.center {
+    text-align: center;
+}
+
+#winner {
+    font-size: 25px;
+    text-align: center;
+    display: none;
+}
+
+#loser {
+    font-size: 25px;
+    text-align: center;
+    display: none;
+}
+
+#again {
+    display: none;
+    padding: 1%;
 }
