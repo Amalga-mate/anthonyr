@@ -10,7 +10,7 @@
 
 #alphabet {
     list-style-type: none;
-    
+    text-align: center;
 }
 
 #alphabet li {
@@ -18,7 +18,7 @@
     border: 2px solid black;
     margin: 0.5em;
     padding: 0.5%;
-    font-size: 1em;
+    font-size: 2em;
     text-align: center;
 }
 
