@@ -15,13 +15,13 @@ let word_dict = {"Comittee": "a group of people appointed for a specific functio
                  "Javascript": "an object-oriented computer programming language commonly used to create interactive effects within web browsers."
                 }
 let hangman_life = new Array();
-hangman_life[0] = "images/im1.png";
-hangman_life[1] = "images/im7.png";
-hangman_life[2] = "images/im6.png";
-hangman_life[3] = "images/im5.png";
-hangman_life[4] = "images/im4.png";
-hangman_life[5] = "images/im3.png";
-hangman_life[6] = "images/im2.png"; 
+hangman_life[0] = "im1.png";
+hangman_life[1] = "im7.png";
+hangman_life[2] = "im6.png";
+hangman_life[3] = "im5.png";
+hangman_life[4] = "im4.png";
+hangman_life[5] = "im3.png";
+hangman_life[6] = "im2.png"; 
                 
 
 // Global Counters and word to guess
