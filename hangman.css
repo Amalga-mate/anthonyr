@@ -10,7 +10,7 @@
 
 #lives {
     text-align: center;
-    font-size: 1.5vw;
+    font-size: 0.8cm;
 }
 
 #alphabet {
@@ -24,7 +24,7 @@
     border-radius:8px;
     margin: 1vw;
     padding: 0.5%;
-    font-size: 7vh;
+    font-size: 1.5cm;
     text-align: center;
 }
 
@@ -40,7 +40,7 @@
 #myWord li {
     display: inline;
     margin: 0.2em;
-    font-size: 3vw;
+    font-size: 4vw;
 }
 
 #definition {
