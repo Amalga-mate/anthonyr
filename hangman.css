@@ -41,11 +41,11 @@
 #myWord li {
     display: inline;
     margin: 0.2em;
-    font-size: 4vw;
+    font-size: 0.8cm;
 }
 
 #definition {
-    font-size: 2vw;
+    font-size: 0.8cm;
     text-align: center;
 }
 
