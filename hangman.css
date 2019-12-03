@@ -1,0 +1,78 @@
+#restart {
+    display: none;
+    padding: 1%;
+}
+
+#lives {
+    text-align: center;
+    font-size: 1.5em;
+}
+
+#alphabet {
+    list-style-type: none;
+    text-align: center;
+}
+
+#alphabet li {
+    display: inline-block;
+    border: 2px solid black;
+    margin: 0.5em;
+    padding: 0.5%;
+    font-size: 7vh;
+    text-align: center;
+}
+
+#alphabet li:hover{
+    background-color: yellow;
+}
+
+#myWord {
+    list-style-type: none;
+    text-align: center;
+}
+
+#myWord li {
+    display: inline;
+    margin: 0.2em;
+    font-size: 2em;
+}
+
+#definition {
+    font-size: 1.5em;
+    text-align: center;
+}
+
+.active {
+    opacity: 0.4;
+}
+
+#start {
+    text-align: center;
+    padding: 1%;
+}
+
+#title {
+    width: 50%;
+    height: 50%;
+}
+
+.center {
+    text-align: center;
+}
+
+#winner {
+    font-size: 25px;
+    text-align: center;
+    display: none;
+}
+
+#loser {
+    font-size: 25px;
+    text-align: center;
+    display: none;
+}
+
+#again {
+    display: none;
+    padding: 1%;
+}
