@@ -14,6 +14,15 @@ let word_dict = {"Comittee": "a group of people appointed for a specific functio
                  "Philippines": "an archipelago consisting of the 3 island groups Luzon, Visayas, and Mindanao",
                  "Javascript": "an object-oriented computer programming language commonly used to create interactive effects within web browsers."
                 }
+let hangman_life = new Array();
+hangman_life[0] = "images/im1.png";
+hangman_life[1] = "images/im7.png";
+hangman_life[2] = "images/im6.png";
+hangman_life[3] = "images/im5.png";
+hangman_life[4] = "images/im4.png";
+hangman_life[5] = "images/im3.png";
+hangman_life[6] = "images/im2.png"; 
+                
 
 // Global Counters and word to guess
 let guesses = []
@@ -33,10 +42,15 @@ function startGame (){
     document.getElementById("winner").style.display = "none"
     document.getElementById("loser").style.display = "none"
     document.getElementById("again").style.display = "none"
+    document.getElementById("p_ag").style.display = "none"
+    document.getElementById("p_win").style.display = "none"
+    
+
 
     document.getElementById("restart").style.display = "initial"
     document.getElementById("lives").style.display = "block"
     document.getElementById("definition").style.display = "block"
+    document.getElementById("life_img").style.display = "initial"
 
     let keys = Object.keys(word_dict)
     let word = keys[Math.floor(Math.random() * keys.length)]
@@ -85,7 +99,7 @@ function getWord (word, definition) {
 
     guesses.push(guess);
     wordHolder.appendChild(correct);
-    document.getElementById("definition").innerHTML = "definition: " + definition
+    document.getElementById("definition").innerHTML = "DEFINITION : " + definition
     correct.appendChild(guess);
     }
 }
@@ -97,7 +111,7 @@ function getWord (word, definition) {
 function check(word) {
     list.onclick = function () {
         let geuss = (this.innerHTML);
-        let j = 0
+        let j = 0;
         this.setAttribute("class", "active");
         this.onclick = null;
         for (var i = 0; i < word.length; i++) {
@@ -110,6 +124,7 @@ function check(word) {
         if (j === 0) {
             lives -= 1;
             update();
+            document.getElementById("life_img").src = hangman_life[lives];
         } 
         else {
             update();
@@ -140,8 +155,10 @@ function winner(){
     document.getElementById("lives").style.display = "none"
     document.getElementById("definition").style.display = "none"
     document.getElementById("restart").style.display = "none"
+    document.getElementById("life_img").style.display = "none"
 
     document.getElementById("winner").style.display = "initial"
+    document.getElementById("p_win").style.display = "initial"
     document.getElementById("again").style.display = "initial"
 }
 
@@ -154,9 +171,12 @@ function loser(){
     document.getElementById("lives").style.display = "none"
     document.getElementById("definition").style.display = "none"
     document.getElementById("restart").style.display = "none"
+    document.getElementById("life_img").style.display = "none"
 
     document.getElementById("loser").style.display = "initial"
+    document.getElementById("p_ag").style.display = "initial"
     document.getElementById("again").style.display = "initial"
+    
 }
 
 
@@ -166,7 +186,9 @@ function playAgain() {
     counter = 0
     space = 0
     lives = 7
+    document.getElementById("life_img").src = hangman_life[0];
     startGame()
+    
 }
 
 
@@ -178,7 +200,9 @@ function restartGame() {
     counter = 0
     space = 0
     lives = 7
+    document.getElementById("life_img").src = hangman_life[0];
     startGame()
+    
 }
 
 
