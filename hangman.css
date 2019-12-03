@@ -1,24 +1,31 @@
 #restart {
+    position:relative;
+    left:45%;
     display: none;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.5em;
+    font-weight: bold;
     padding: 1%;
+
 }
 
 #lives {
     text-align: center;
-    font-size: 3vw;
+    font-size: 1.5em;
 }
 
 #alphabet {
     list-style-type: none;
-    text-align: center;
+    text-align:center;
 }
 
 #alphabet li {
     display: inline-block;
     border: 2px solid black;
-    margin: 0.8vw;
+    border-radius:8px;
+    margin: 0.5em;
     padding: 0.5%;
-    font-size: 3vw;
+    font-size: 1em;
     text-align: center;
 }
 
@@ -34,11 +41,11 @@
 #myWord li {
     display: inline;
     margin: 0.2em;
-    font-size: 5vw;
+    font-size: 2cm;
 }
 
 #definition {
-    font-size: 2vw;
+    font-size: 1.5em;
     text-align: center;
 }
 
@@ -48,6 +55,9 @@
 
 #start {
     text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.5em;
+    font-weight: bold;
     padding: 1%;
 }
 
@@ -61,18 +71,44 @@
 }
 
 #winner {
-    font-size: 25px;
+    font-size: 50px;
     text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
     display: none;
 }
 
 #loser {
-    font-size: 25px;
+    font-size: 50px;
     text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
     display: none;
 }
 
 #again {
     display: none;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.5em;
+    font-weight: bold;
     padding: 1%;
+}
+#p_ag {
+    position:relative;
+    width: 20%;
+    height: 35%;
+    display: none;
+}
+#life_img {
+    display:none;
+    position:relative;
+    width: 20%;
+    height: 35%;
+    
+}
+#p_win{
+    position:relative;
+    width: 20%;
+    height: 35%;
+    display: none;
 }
